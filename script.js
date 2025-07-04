@@ -1,5 +1,9 @@
-document.getElementById("body").style.backgroundColor = "beige";
 
-function myFunc(){
-     document.getElementById("submit").innerHTML = "Thank you for talking to us.";
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+        alert("Thank you! Your message has been received.");
+        form.reset();
+    });
+});
