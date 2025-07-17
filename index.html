@@ -15,6 +15,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#careers">Careers in Tech</a></li>
       <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#os">Learn More</a></li>
     </ul>
     <p class="blog-name">Tech-Talk-Blog</p>
   </nav>
@@ -96,6 +97,105 @@
       <li><strong>Network Engineer</strong>: Manages network infrastructure for reliability and security.</li>
     </ol>
   </div>
+
+  <section id="os">
+    <h1>
+      Windows, macOS (Mac), and Linux are the three most popular operating systems for personal computers, each with distinct strengths and weaknesses.
+    </h1>
+    <h2>An operating system (OS) is a software program that manages a computer's hardware and software resources, acting as an interface between the user and the computer.</h2>
+    <img src="media/images/os2.jpeg" alt="" id="os-image" style="border-radius: 20%;">
+    <div>
+      <h3>Windows</h3>
+      <img src="media/images/windows.jpeg" alt="">
+      <p>
+        Windows is the most widely used operating system on personal computers, offering high hardware compatibility, a large range of software options, and strong gaming support, but it is more prone to security threats compared to macOS and Linux.
+      </p>
+      <h4>Directory Structure</h4>
+      <ul>
+        <li>Files and folders are organized in a hierarchical structure with drives (e.g., C:, D:).</li>
+        <li>File paths use backslashes (\) to separate folders.</li>
+      </ul>
+      <h4>Naming Conventions</h4>
+      <ul>
+        <li>Windows file and folder names are not case-sensitive. For example, "Document.txt" and "document.txt" would be considered the same file.</li>
+        <li>Windows does have naming restrictions: you cannot use characters like \ / : * ? " < > | in file or folder names, and names like "CON", "AUX", "NUL", "PRN", etc., are reserved and cannot be used as file names.</li>
+      </ul>
+      <h4>File Systems</h4>
+      <p>Windows mainly uses the NTFS (New Technology File System) for its internal hard drives because it supports large files, file permissions, and encryption. Windows also supports FAT32 and exFAT. FAT32 is still used on USB drives and memory cards because of its wide compatibility with other devices like cameras, printers, and game consoles.</p>
+      <h4>Executable File Extensions</h4>
+      <p>Windows uses file extensions like .exe (executable file), .bat (batch file for command scripts), .msi (Microsoft installer package), and .cmd (command script file). These file types launch programs or run scripts directly when double-clicked.</p>
+      <h4>Script Execution</h4>
+      <p>Windows runs command or script files using tools like Command Prompt (cmd.exe) and PowerShell.
+      Batch files (.bat, .cmd) and executable files (.exe) run via Command Prompt.
+      PowerShell is more advanced, allowing the execution of PowerShell scripts (.ps1) with more control over system management and automation.</p>
+      <span>
+        Windows = Command Prompt, PowerShell.
+      </span>
+
+    </div>
+
+    <div>
+      <h3>macOS (Mac)</h3>
+      <img src="media/images/apple.jpeg" alt="">
+      <p>
+        macOS is known for its smooth user experience and security, with excellent performance optimized for Apple hardware, though it is limited to Apple devices and offers less customization than Windows or Linux.
+      </p>
+      <h4>Directory Structure</h4>
+      <ul>
+        <li>Uses a hierarchical file system similar to Linux, with everything under the root directory (/).</li>
+        <li>File paths use forward slashes (/).</li>
+      </ul>
+      <h4>Naming Conventions</h4>
+      <ul>
+        <li>By default, macOS file names are not case-sensitive, but this depends on the file system format. For example, "Document.txt" and "document.txt" are usually treated as the same file, unless the disk is formatted as case-sensitive (which is an option in macOS).</li>
+        <li>macOS also restricts certain characters, like : and /.</li>
+      </ul>
+      <h4>File Systems</h4>
+      <p>macOS uses APFS (Apple File System) as its default on newer systems, optimized for solid-state drives (SSDs). It also supports HFS+ (Mac OS Extended) on older systems. macOS can read FAT32 and exFAT, making it possible to share files with Windows systems and portable devices.</p>
+
+      <h4>Executable File Extensions</h4>
+      <p>
+        macOS uses .app bundles for applications, which appear as single files in Finder but are actually folders containing executable code and resources. It also supports .command and .sh files (shell scripts) that can be executed from the Terminal.
+      </p>
+      <h4>Script Execution</h4>
+      <p>macOS uses the Terminal app for running command-line scripts. It supports Unix-style shell environments like bash or zsh.
+        Scripts such as shell scripts (.sh) and command files (.command) can be executed if marked as executable. Users usually run these with ./scriptname.sh or similar commands.</p>
+
+        <span>macOS = Terminal with bash/zsh, scripts with executable permissions.</span>
+
+
+    </div>
+    <div>
+      <h3>Linux</h3>
+      <img src="media/images/linux.jpeg" alt="">
+      <p>
+        Linux is a free, open-source operating system highly favored by developers and cybersecurity professionals for its flexibility, strong security features, and customizability, but it requires more technical knowledge and has weaker gaming support compared to Windows.
+      </p>
+      <h4>Directory Structure</h4>
+      <ul>
+        <li>Organizes files under a single root directory (/) using a hierarchical structure.</li>
+        <li>File paths also use forward slashes (/), similar to macOS.</li>
+      </ul>
+      <h4>Naming Conventions</h4>
+      <ul>
+        <li>Linux file and folder names are case-sensitive. "Document.txt" and "document.txt" are two completely different files.</li>
+        <li>Linux does not allow / or the null character (ASCII 0) in file names, but otherwise it allows most characters, though using special characters in file names is discouraged for compatibility reasons.</li>
+      </ul>
+      <h4>File Systems</h4>
+      <p>Linux typically uses ext4 (Fourth Extended File System) as its default, but it also supports other file systems like ext3, ext2, XFS, and Btrfs. Linux can read and write to FAT32 and exFAT, especially on USB drives or SD cards for compatibility with other operating systems.</p>
+      <h4>Executable File Extensions</h4>
+      <p>
+        Linux does not rely on file extensions for executable files. Instead, it uses file permissions to determine executability. Common file types include shell scripts (often with .sh or no extension), binary executable files (compiled programs), and package manager scripts (like .deb for Debian-based systems). To make a file executable, you set the executable permission using a command like chmod +x filename.
+      </p>
+      <h4>Script Execution</h4>
+      <p>Linux primarily uses its Terminal for running scripts and commands. Shell environments like bash, zsh, or other shells handle script execution.
+          Linux runs shell scripts by setting execute permissions with chmod +x scriptname.sh and executing them with ./scriptname.sh. Linux systems also support automation and advanced scripting via cron jobs and other scheduling tools.</p>
+      <span>
+        Linux = Terminal with bash/zsh or other shells, focus on permissions and direct execution.
+      </span>
+
+    </div>
+  </section>
 
   <footer id="contact">
     <h3>Talk to Us</h3>

@@ -86,10 +86,31 @@ div {
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
+   
 }
 
 ol, ul {
     padding-left: 1.5rem;
+}
+#os{
+    background-color: burlywood;
+    padding: 10px;
+    margin: 10px;
+    color: #004687;
+    border-radius: 12px;
+    border: 1px solid #004687;
+}
+#os img{
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: 40%;
+}
+#os div ul li{
+    list-style:circle;
+    
 }
 
 footer {
@@ -97,6 +118,7 @@ footer {
     text-align: center;
     padding: 1rem;
     color: #004687;
+    
 }
 
 footer ul {
@@ -141,7 +163,7 @@ input[type="submit"]:hover {
     background-color: #72A0C1;
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
     nav {
         flex-direction: column;
