@@ -1,4 +1,3 @@
-/* Base styles */
 body {
     font-family: system-ui, sans-serif;
     margin: 0;
@@ -7,28 +6,28 @@ body {
     background-color: #f4f4f4;
 }
 
-h1, h3 {
-    color: burlywood;
-    font-weight: bold;
-    font-style: italic;
-    text-align: center;
+.blog-name {
+    font-size: 2rem;
+    color: black;
+    margin-left: 60px;
+    text-decoration: none;
+}
+nav > div img{
+    width: 10%;
+    width: 10vh;
+    border-radius: 12px;
+}
+nav > div a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+
+}
+nav > div a:hover{
     text-decoration: underline;
 }
 
-.blog-name {
-    font-size: 2rem;
-    color: #004687;
-    background-color: #5072A7;
-    opacity: 0.8;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin-left: auto;
-}
 
-p {
-    font-size: 1rem;
-    margin: 0.5em 0;
-}
 
 nav {
     display: flex;
@@ -38,60 +37,52 @@ nav {
     background-color: burlywood;
     padding: 1rem;
 }
-
-nav ul {
-    list-style: none;
+.heading1{
+    text-align: center;
+}
+#home{
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
+    gap: 10px;
 
-nav li {
-    display: inline-block;
 }
-
-nav a {
-    text-decoration: none;
-    color: #004687;
-    font-weight: 500;
+#home > div{
+    width:100%;
 }
-
-nav a:hover {
-    color: #72A0C1;
-    text-decoration: underline;
-}
-
-#logo {
-    width: 80px;
-    height: 80px;
+#home > div img{
+    width: 80%;
+    height: 40vh;
     border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
+}
+#about{
+    text-align: center;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 12px;
+}
+#careers h2{
+    text-align: center;
+}
+#careers{
+    margin: 10px;
+}
+.hero{
+    display: flex;
+    gap: 50px;
+}
+.hero > div img{
+    width: 100%;
+    height: 50vh;
+    
 }
 
-#images {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 1em auto;
-}
 
-div {
-    background-color: #5072A7;
-    color: white;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-   
-}
 
-ol, ul {
-    padding-left: 1.5rem;
-}
+
+
+
+
+
+
 #os{
     background-color: burlywood;
     padding: 10px;
