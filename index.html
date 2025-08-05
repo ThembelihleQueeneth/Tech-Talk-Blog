@@ -3,270 +3,899 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Challenges Facing African IT Professionals</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-</head>
-<body id="body">
+  <title>Challenges Facing African IT Professionals | Tech Talk Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #3b82f6;
+      --light-color: #f8fafc;
+      --dark-color: #1e293b;
+      --text-color: #334155;
+      --gray-color: #94a3b8;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --transition: all 0.3s ease;
+    }
 
-  <!-- navigation bar -->
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-color);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: white;
+      box-shadow: var(--box-shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .blog-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Challenges Section */
+    .section-title {
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary-color);
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    .challenges-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .challenge-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .challenge-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .challenge-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .challenge-content {
+      padding: 1.5rem;
+    }
+
+    .challenge-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* About Section */
+    .about {
+      background-color: white;
+      padding: 4rem 0;
+      margin: 2rem 0;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Careers Section */
+    .careers {
+      padding: 4rem 0;
+      background-color: #f1f5f9;
+    }
+
+    .careers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .careers-list {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .careers-list p {
+      background-color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .careers-list p:hover {
+      transform: translateX(5px);
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .careers-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .careers-image img {
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    /* OS Comparison */
+    .os-comparison {
+      padding: 4rem 0;
+    }
+
+    .os-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .os-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .os-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .os-img-container {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background-color: #f8fafc;
+    }
+
+    .os-img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .os-content {
+      padding: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    /* File Systems Section */
+    .file-systems {
+      padding: 4rem 0;
+      background-color: #f1f5f9;
+    }
+
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .system-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--box-shadow);
+    }
+
+    .system-card h4 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .system-card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .system-card ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .system-card span {
+      display: block;
+      font-weight: 500;
+      color: var(--primary-color);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* Contact Form */
+    .contact {
+      padding: 4rem 0;
+      background-color: white;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f8fafc;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: var(--border-radius);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-column ul li a {
+      transition: var(--transition);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: var(--gray-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: var(--transition);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .careers-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .challenge-content h2, .os-content h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
   <nav>
-    <div>
-    <img src="media/images/logo.jpg" alt="Tech Talk Logo" id="logo" />
-    <a href="" class="blog-name">Tech-Talk-Blog</a>
-    </div>
-    <div>
-    <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#careers">Careers in Tech</a>
-      <a href="#contact">Contact Us</a>
-      <a href="#os_heading">Learn More</a>
+    <div class="container nav-container">
+      <div class="logo-container">
+        <img src="media/images/logo.jpg" alt="Tech Talk Logo" class="logo" />
+        <a href="#" class="blog-name">Tech-Talk-Blog</a>
       </div>
-    
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#careers">Careers</a>
+        <a href="#os-comparison">OS Comparison</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
   </nav>
 
-  <!-- home section -->
-  <div class="heading1">
-    <h1>Challenges Facing African IT Professionals</h1>
-  </div>
-
-  <section id="home">
-    <div>
-      <h2>1. Skills Shortage</h2>
-      <img src="media/images/pic1.jpeg" alt="Skills Shortage" id="images" />
-      <p>
-      Many companies struggle to find employees with the necessary technology skills to help them achieve their digital transformation goals. 
-      This is known as the IT talent shortage. Nearly 90% of IT leaders say recruiting and retaining tech talent is an ongoing challenge, according to Deloitte.
-    </p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Challenges Facing African IT Professionals</h1>
+      <p>Exploring the key obstacles and opportunities in Africa's growing tech industry and how professionals are overcoming them to drive innovation and digital transformation.</p>
     </div>
-    <div>
-      <h2>2. Digital Transformation</h2>
-    <img src="media/images/pic2.png" alt="Digital Transformation" id="images" />
-    <p>
-      Digital transformation offers numerous benefits but also faces challenges such as resistance to change, legacy systems, lack of digital strategy, skill shortages, security issues, and ROI tracking difficulties.
-    </p>
-    </div>
-    <div>
-        <h2>3. Cloud Computing</h2>
-    <img src="media/images/pic33.png" alt="Cloud Computing" id="images" />
-    <p>
-      Cloud computing is revolutionizing how businesses operate, but also brings challenges such as data security, cost management, and integration with existing infrastructure.
-    </p>
-    </div>
-    <div>
-       <h2>4. Budget</h2>
-    <img src="media/images/pic4.jpg" alt="Budget Challenges" id="images" />
-    <p>
-      Budgeting issues in tech include adapting to rapid changes, cost underestimation, and outdated infrastructure. Solutions involve prioritization, resource optimization, and flexible budgeting.
-    </p>
-    </div>
-    <div>
-      <h2>5. Project Management</h2>
-    <img src="media/images/pic55.jpg" alt="Project Management" id="images" />
-    <p>
-      Tech project management requires handling fast-paced change, scope creep, and resource balancing. Strong communication, risk control, and stakeholder involvement are key.
-    </p>
-
-    </div>
-
-    <div>
-      <h2>6. Leadership</h2>
-    <img src="media/images/pic6.jpg" alt="Leadership" id="images" />
-    <p>
-      Leaders in tech must manage innovation, cybersecurity, team cohesion, talent acquisition, and inclusive communication while driving performance and growth.
-    </p>
-    </div>
-
   </section>
 
-  
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-
-   
-
-  <div id="about">
-    <h2>Tech-Talk-Blog</h2>
-    <p>
-      Tech-Talk-blog discusses trends in technology. It helps readers and professionals stay updated on the latest tools, gadgets, software, and innovations shaping our digital world.
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam ea ipsa maiores optio! Labore nisi, nostrum natus odio, eius dolorum facere fugit culpa dolores autem molestias, ipsam inventore repudiandae.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ratione eum numquam vel inventore unde assumenda incidunt itaque dolorum dolor ad est voluptate, perspiciatis sed nesciunt, culpa nihil soluta quo?
-    </p>
-  </div>
-
-  <div id="careers">
-    <h2>10 Careers To Explore In Tech</h2>
-    <div class="hero">
-    <div id="top_ten_careers">
-      <p><strong>Web Developer</strong>: Develops websites using HTML, CSS, JavaScript, and server-side languages.</p>
-      <p><strong>Information Security Analyst</strong>: Protects systems and networks from cyber threats.</p>
-      <p><strong>Data Scientist</strong>: Extracts insights and creates models from large data sets.</p>
-      <p><strong>Machine Learning Engineer</strong>: Builds and deploys AI systems that learn from data.</p>
-      <p><strong>Software Developer</strong>: Designs and builds applications for users and systems.</p>
-      <p><strong>DevOps Engineer</strong>: Bridges development and operations with automation and CI/CD.</p>
-      <p><strong>Cloud Engineer</strong>: Designs and maintains cloud infrastructure and services.</p>
-      <p><strong>Computer Systems Analyst</strong>: Improves systems by analyzing workflows and technology.</p>
-      <p><strong>Mobile App Developer</strong>: Creates apps for Android, iOS, and cross-platform devices.</p>
-      <p><strong>Network Engineer</strong>: Manages network infrastructure for reliability and security.</p>
+  <!-- Challenges Section -->
+  <div class="container">
+    <h2 class="section-title" id="challenges">Key Challenges</h2>
+    <div class="challenges-grid">
+      <div class="challenge-card">
+        <img src="media/images/pic1.jpeg" alt="Skills Shortage" class="challenge-img" />
+        <div class="challenge-content">
+          <h2>Skills Shortage</h2>
+          <p>Many companies struggle to find employees with the necessary technology skills to help them achieve their digital transformation goals. This is known as the IT talent shortage. Nearly 90% of IT leaders say recruiting and retaining tech talent is an ongoing challenge, according to Deloitte.</p>
+        </div>
       </div>
-      <div>
-        <img src="media/images/tech-sales-career-image.webp" alt="">
+      <div class="challenge-card">
+        <img src="media/images/pic2.png" alt="Digital Transformation" class="challenge-img" />
+        <div class="challenge-content">
+          <h2>Digital Transformation</h2>
+          <p>Digital transformation offers numerous benefits but also faces challenges such as resistance to change, legacy systems, lack of digital strategy, skill shortages, security issues, and ROI tracking difficulties.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <img src="media/images/pic33.png" alt="Cloud Computing" class="challenge-img" />
+        <div class="challenge-content">
+          <h2>Cloud Computing</h2>
+          <p>Cloud computing is revolutionizing how businesses operate, but also brings challenges such as data security, cost management, and integration with existing infrastructure.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <img src="media/images/pic4.jpg" alt="Budget Challenges" class="challenge-img" />
+        <div class="challenge-content">
+          <h2>Budget Constraints</h2>
+          <p>Budgeting issues in tech include adapting to rapid changes, cost underestimation, and outdated infrastructure. Solutions involve prioritization, resource optimization, and flexible budgeting.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <img src="media/images/pic55.jpg" alt="Project Management" class="challenge-img" />
+        <div class="challenge-content">
+          <h2>Project Management</h2>
+          <p>Tech project management requires handling fast-paced change, scope creep, and resource balancing. Strong communication, risk control, and stakeholder involvement are key.</p>
+        </div>
+      </div>
+      <div class="challenge-card">
+        <img src="media/images/pic6.jpg" alt="Leadership" class="challenge-img" />
+        <div class="challenge-content">
+          <h2>Leadership</h2>
+          <p>Leaders in tech must manage innovation, cybersecurity, team cohesion, talent acquisition, and inclusive communication while driving performance and growth.</p>
+        </div>
       </div>
     </div>
   </div>
-  <hr>
-  <div id="os_heading">
-     <h2>
-      Windows, macOS (Mac), and Linux are the three most popular operating systems for personal computers, each with distinct strengths and weaknesses.
-    </h2>
-    <p>An operating system (OS) is a software program that manages a computer's hardware and software resources, acting as an interface between the user and the computer.</p>
 
-  </div>
-  <section id="os">
-    <div>
-      <h3>Windows</h3>
-      <img src="media/images/windows.jpeg" alt="">
-      <p>
-        Windows is the most widely used operating system on personal computers, offering high hardware compatibility, a large range of software options, and strong gaming support, but it is more prone to security threats compared to macOS and Linux.
-      </p>
-      <button>Read More</button>
-
-    </div>
-    <div>
-      <h3>macOS (Mac)</h3>
-      <img src="media/images/apple.jpeg" alt="">
-      <p>
-        macOS is known for its smooth user experience and security, with excellent performance optimized for Apple hardware, though it is limited to Apple devices and offers less customization than Windows or Linux.
-      </p>
-      <button>Read More</button>
-
-    </div>
-    <div>
-      <h3>Linux</h3>
-      <img src="media/images/linux.jpeg" alt="">
-      <p>
-        Linux is a free, open-source operating system highly favored by developers and cybersecurity professionals for its flexibility, strong security features, and customizability, but it requires more technical knowledge and has weaker gaming support compared to Windows.
-      </p>
-      <button>Read More</button>
-
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <h2>About Tech-Talk-Blog</h2>
+        <p>Tech-Talk-Blog is a premier platform discussing trends in African technology. We help readers and professionals stay updated on the latest tools, gadgets, software, and innovations shaping our digital world while addressing the unique challenges faced in the African tech ecosystem.</p>
+        <p>Our mission is to bridge the knowledge gap in Africa's tech industry by providing insightful content, career guidance, and practical solutions to the challenges IT professionals face daily.</p>
+      </div>
     </div>
   </section>
 
-  <section id="lorem">
-    <div>
-      
-      <h4>Directory Structure</h4>
-      <ul>
-        <li>Files and folders are organized in a hierarchical structure with drives (e.g., C:, D:).</li>
-        <li>File paths use backslashes (\) to separate folders.</li>
-      </ul>
-      <h4>Naming Conventions</h4>
-      <ul>
-        <li>Windows file and folder names are not case-sensitive. For example, "Document.txt" and "document.txt" would be considered the same file.</li>
-        <li>Windows does have naming restrictions: you cannot use characters like \ / : * ? " < > | in file or folder names, and names like "CON", "AUX", "NUL", "PRN", etc., are reserved and cannot be used as file names.</li>
-      </ul>
-      <h4>File Systems</h4>
-      <p>Windows mainly uses the NTFS (New Technology File System) for its internal hard drives because it supports large files, file permissions, and encryption. Windows also supports FAT32 and exFAT. FAT32 is still used on USB drives and memory cards because of its wide compatibility with other devices like cameras, printers, and game consoles.</p>
-      <h4>Executable File Extensions</h4>
-      <p>Windows uses file extensions like .exe (executable file), .bat (batch file for command scripts), .msi (Microsoft installer package), and .cmd (command script file). These file types launch programs or run scripts directly when double-clicked.</p>
-      <h4>Script Execution</h4>
-      <p>Windows runs command or script files using tools like Command Prompt (cmd.exe) and PowerShell.
-      Batch files (.bat, .cmd) and executable files (.exe) run via Command Prompt.
-      PowerShell is more advanced, allowing the execution of PowerShell scripts (.ps1) with more control over system management and automation.</p>
-      <span>
-        Windows = Command Prompt, PowerShell.
-      </span>
-
-    </div>
-
-    <div>
-      
-      <h4>Directory Structure</h4>
-      <ul>
-        <li>Uses a hierarchical file system similar to Linux, with everything under the root directory (/).</li>
-        <li>File paths use forward slashes (/).</li>
-      </ul>
-      <h4>Naming Conventions</h4>
-      <ul>
-        <li>By default, macOS file names are not case-sensitive, but this depends on the file system format. For example, "Document.txt" and "document.txt" are usually treated as the same file, unless the disk is formatted as case-sensitive (which is an option in macOS).</li>
-        <li>macOS also restricts certain characters, like : and /.</li>
-      </ul>
-      <h4>File Systems</h4>
-      <p>macOS uses APFS (Apple File System) as its default on newer systems, optimized for solid-state drives (SSDs). It also supports HFS+ (Mac OS Extended) on older systems. macOS can read FAT32 and exFAT, making it possible to share files with Windows systems and portable devices.</p>
-
-      <h4>Executable File Extensions</h4>
-      <p>
-        macOS uses .app bundles for applications, which appear as single files in Finder but are actually folders containing executable code and resources. It also supports .command and .sh files (shell scripts) that can be executed from the Terminal.
-      </p>
-      <h4>Script Execution</h4>
-      <p>macOS uses the Terminal app for running command-line scripts. It supports Unix-style shell environments like bash or zsh.
-        Scripts such as shell scripts (.sh) and command files (.command) can be executed if marked as executable. Users usually run these with ./scriptname.sh or similar commands.</p>
-
-        <span>macOS = Terminal with bash/zsh, scripts with executable permissions.</span>
-
-
-    </div>
-    <div>
-      
-      <h4>Directory Structure</h4>
-      <ul>
-        <li>Organizes files under a single root directory (/) using a hierarchical structure.</li>
-        <li>File paths also use forward slashes (/), similar to macOS.</li>
-      </ul>
-      <h4>Naming Conventions</h4>
-      <ul>
-        <li>Linux file and folder names are case-sensitive. "Document.txt" and "document.txt" are two completely different files.</li>
-        <li>Linux does not allow / or the null character (ASCII 0) in file names, but otherwise it allows most characters, though using special characters in file names is discouraged for compatibility reasons.</li>
-      </ul>
-      <h4>File Systems</h4>
-      <p>Linux typically uses ext4 (Fourth Extended File System) as its default, but it also supports other file systems like ext3, ext2, XFS, and Btrfs. Linux can read and write to FAT32 and exFAT, especially on USB drives or SD cards for compatibility with other operating systems.</p>
-      <h4>Executable File Extensions</h4>
-      <p>
-        Linux does not rely on file extensions for executable files. Instead, it uses file permissions to determine executability. Common file types include shell scripts (often with .sh or no extension), binary executable files (compiled programs), and package manager scripts (like .deb for Debian-based systems). To make a file executable, you set the executable permission using a command like chmod +x filename.
-      </p>
-      <h4>Script Execution</h4>
-      <p>Linux primarily uses its Terminal for running scripts and commands. Shell environments like bash, zsh, or other shells handle script execution.
-          Linux runs shell scripts by setting execute permissions with chmod +x scriptname.sh and executing them with ./scriptname.sh. Linux systems also support automation and advanced scripting via cron jobs and other scheduling tools.</p>
-      <span>
-        Linux = Terminal with bash/zsh or other shells, focus on permissions and direct execution.
-      </span>
-
+  <!-- Careers Section -->
+  <section class="careers" id="careers">
+    <div class="container">
+      <h2 class="section-title">10 Careers To Explore In Tech</h2>
+      <div class="careers-container">
+        <div class="careers-list">
+          <p><strong>Web Developer</strong>: Develops websites using HTML, CSS, JavaScript, and server-side languages.</p>
+          <p><strong>Information Security Analyst</strong>: Protects systems and networks from cyber threats.</p>
+          <p><strong>Data Scientist</strong>: Extracts insights and creates models from large data sets.</p>
+          <p><strong>Machine Learning Engineer</strong>: Builds and deploys AI systems that learn from data.</p>
+          <p><strong>Software Developer</strong>: Designs and builds applications for users and systems.</p>
+          <p><strong>DevOps Engineer</strong>: Bridges development and operations with automation and CI/CD.</p>
+          <p><strong>Cloud Engineer</strong>: Designs and maintains cloud infrastructure and services.</p>
+          <p><strong>Computer Systems Analyst</strong>: Improves systems by analyzing workflows and technology.</p>
+          <p><strong>Mobile App Developer</strong>: Creates apps for Android, iOS, and cross-platform devices.</p>
+          <p><strong>Network Engineer</strong>: Manages network infrastructure for reliability and security.</p>
+        </div>
+        <div class="careers-image">
+          <img src="media/images/tech-sales-career-image.webp" alt="Tech Careers" />
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer id="contact">
-    <h3>Talk to Us</h3>
-    <form id="contact-form" action="#" method="post">
-      <label for="fname">First Name:</label><br />
-      <input type="text" id="fname" name="fname" placeholder="Jane" required /><br />
-      <label for="lname">Last Name:</label><br />
-      <input type="text" id="lname" name="lname" placeholder="Doe" required /><br />
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" placeholder="janedoe@gmail.com" required /><br />
-      <label for="message">Message:</label><br />
-      <textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea><br />
-      <input type="submit" value="Submit" id="submit" />
-    </form>
+  <!-- OS Comparison Section -->
+  <section class="os-comparison" id="os-comparison">
+    <div class="container">
+      <h2 class="section-title">Operating System Comparison</h2>
+      <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">Windows, macOS (Mac), and Linux are the three most popular operating systems for personal computers, each with distinct strengths and weaknesses.</p>
+      
+      <div class="os-grid">
+        <div class="os-card">
+          <div class="os-img-container">
+            <img src="media/images/windows.jpeg" alt="Windows OS" class="os-img" />
+          </div>
+          <div class="os-content">
+            <h3>Windows</h3>
+            <p>Windows is the most widely used operating system on personal computers, offering high hardware compatibility, a large range of software options, and strong gaming support, but it is more prone to security threats compared to macOS and Linux.</p>
+            <button class="btn">Read More</button>
+          </div>
+        </div>
+        <div class="os-card">
+          <div class="os-img-container">
+            <img src="media/images/apple.jpeg" alt="macOS" class="os-img" />
+          </div>
+          <div class="os-content">
+            <h3>macOS (Mac)</h3>
+            <p>macOS is known for its smooth user experience and security, with excellent performance optimized for Apple hardware, though it is limited to Apple devices and offers less customization than Windows or Linux.</p>
+            <button class="btn">Read More</button>
+          </div>
+        </div>
+        <div class="os-card">
+          <div class="os-img-container">
+            <img src="media/images/linux.jpeg" alt="Linux OS" class="os-img" />
+          </div>
+          <div class="os-content">
+            <h3>Linux</h3>
+            <p>Linux is a free, open-source operating system highly favored by developers and cybersecurity professionals for its flexibility, strong security features, and customizability, but it requires more technical knowledge and has weaker gaming support compared to Windows.</p>
+            <button class="btn">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <ul>
-      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-      <li><a href="mailto:talktech@example.com"><i class="fa fa-envelope"></i></a></li>
-      <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-    </ul>
+  <!-- File Systems Section -->
+  <section class="file-systems" id="file-systems">
+    <div class="container">
+      <h2 class="section-title">File System Comparison</h2>
+      <div class="systems-grid">
+        <div class="system-card">
+          <h4>Directory Structure</h4>
+          <ul>
+            <li>Files and folders are organized in a hierarchical structure with drives (e.g., C:, D:).</li>
+            <li>File paths use backslashes (\) to separate folders.</li>
+          </ul>
+          <h4>Naming Conventions</h4>
+          <ul>
+            <li>Windows file and folder names are not case-sensitive.</li>
+            <li>Windows does have naming restrictions: you cannot use characters like \ / : * ? " < > | in file or folder names.</li>
+          </ul>
+          <h4>File Systems</h4>
+          <p>Windows mainly uses the NTFS (New Technology File System) for its internal hard drives because it supports large files, file permissions, and encryption. Windows also supports FAT32 and exFAT.</p>
+          <h4>Executable File Extensions</h4>
+          <p>Windows uses file extensions like .exe (executable file), .bat (batch file for command scripts), .msi (Microsoft installer package), and .cmd (command script file).</p>
+          <h4>Script Execution</h4>
+          <p>Windows runs command or script files using tools like Command Prompt (cmd.exe) and PowerShell.</p>
+          <span>Windows = Command Prompt, PowerShell</span>
+        </div>
+        <div class="system-card">
+          <h4>Directory Structure</h4>
+          <ul>
+            <li>Uses a hierarchical file system similar to Linux, with everything under the root directory (/).</li>
+            <li>File paths use forward slashes (/).</li>
+          </ul>
+          <h4>Naming Conventions</h4>
+          <ul>
+            <li>By default, macOS file names are not case-sensitive, but this depends on the file system format.</li>
+            <li>macOS also restricts certain characters, like : and /.</li>
+          </ul>
+          <h4>File Systems</h4>
+          <p>macOS uses APFS (Apple File System) as its default on newer systems, optimized for solid-state drives (SSDs). It also supports HFS+ (Mac OS Extended) on older systems.</p>
+          <h4>Executable File Extensions</h4>
+          <p>macOS uses .app bundles for applications, which appear as single files in Finder but are actually folders containing executable code and resources.</p>
+          <h4>Script Execution</h4>
+          <p>macOS uses the Terminal app for running command-line scripts. It supports Unix-style shell environments like bash or zsh.</p>
+          <span>macOS = Terminal with bash/zsh, scripts with executable permissions.</span>
+        </div>
+        <div class="system-card">
+          <h4>Directory Structure</h4>
+          <ul>
+            <li>Organizes files under a single root directory (/) using a hierarchical structure.</li>
+            <li>File paths also use forward slashes (/), similar to macOS.</li>
+          </ul>
+          <h4>Naming Conventions</h4>
+          <ul>
+            <li>Linux file and folder names are case-sensitive.</li>
+            <li>Linux does not allow / or the null character (ASCII 0) in file names.</li>
+          </ul>
+          <h4>File Systems</h4>
+          <p>Linux typically uses ext4 (Fourth Extended File System) as its default, but it also supports other file systems like ext3, ext2, XFS, and Btrfs.</p>
+          <h4>Executable File Extensions</h4>
+          <p>Linux does not rely on file extensions for executable files. Instead, it uses file permissions to determine executability.</p>
+          <h4>Script Execution</h4>
+          <p>Linux primarily uses its Terminal for running scripts and commands. Shell environments like bash, zsh, or other shells handle script execution.</p>
+          <span>Linux = Terminal with bash/zsh or other shells, focus on permissions and direct execution.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p><i class="fa fa-copyright"></i> 2025 Powered by Tech-Talk. All rights reserved.</p>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Talk to Us</h2>
+      <form class="contact-form" id="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" class="form-control" placeholder="Jane" required />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" class="form-control" placeholder="Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="janedoe@gmail.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Tech-Talk-Blog</h3>
+          <p>Your premier source for tech insights, career guidance, and industry trends in Africa's growing tech ecosystem.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:talktech@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#os-comparison">OS Comparison</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Tech News</a></li>
+            <li><a href="#">Career Guides</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Industry Reports</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Nairobi, Kenya</li>
+            <li><i class="fas fa-phone"></i> +254 700 123 456</li>
+            <li><i class="fas fa-envelope"></i> info@techtalkblog.africa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Tech-Talk-Blog. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile navigation toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+
+          // Close mobile menu if open
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        }
+      });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Here you would typically send the data to a server
+        console.log('Form submitted:', data);
+        
+        // Show success message
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+      });
+    }
+
+    // Add animation to cards when they come into view
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.challenge-card, .os-card, .system-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
